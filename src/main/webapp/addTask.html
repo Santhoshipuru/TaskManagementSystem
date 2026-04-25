@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Add Task</title>
+
+<style>
+    body {
+        font-family: Arial;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        width: 320px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        text-align: center;
+    }
+
+    input, select {
+        width: 90%;
+        padding: 10px;
+        margin: 8px 0;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+    }
+
+    button {
+        background: #667eea;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 6px;
+        width: 100%;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #5a67d8;
+    }
+
+    a {
+        display: block;
+        margin-top: 10px;
+        text-decoration: none;
+        color: #333;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+   <h2>Add Task</h2>
+
+<form action="TaskServlet" method="post">
+
+<input type="text" name="title" placeholder="Title"><br>
+<input type="text" name="description" placeholder="Description"><br>
+
+<select name="status">
+<option>Pending</option>
+<option>InProgress</option>
+<option>Completed</option>
+</select>
+
+<input type="hidden" name="action" value="add">
+
+<button type="submit">Add Task</button>
+
+</form>
+
+<a href="TaskServlet">View Tasks</a>
+<a href="LogoutServlet">Logout</a>
+
+
+</div>
+
+</body>
+</html>
